@@ -1,0 +1,117 @@
+% Basierend auf der TEX-Vorlage "Briefvorlage für Privatleute"
+% Von Alexey Abel
+% Orginal-Git-Repository: https://github.com/PanCakeConnaisseur/latex-briefvorlage-din-5008
+% Basiert auf KOMA-Scripts scrlttr2
+
+\documentclass[
+	% Schriftgröße
+	fontsize=12pt,
+	%
+	% zwischen Absätzen eine leere Zeile einfügen, statt lediglich Einrückung
+	parskip=full,
+	%
+	% Papierformat auf DIN-A4
+	paper=A4,	
+	%
+	% Briefkopf (ganz oben) rechts ausrichten, standardmäßig links
+	fromalign=right,
+	%
+	% Telefonnummer im Briefkopf anzeigen
+	%fromphone=true,
+	%
+	% Faxnnummer im Briefkopf anzeigen
+	%fromfax=true,
+	%
+	% E-Mail-Adresse im Briefkopf anzeigen
+	fromemail=true,
+	%
+	% URL im Briefkopf anzeigen
+	%fromurl=true,
+	%
+	% Faltmarkierungen verbergen
+	%foldmarks=false,
+	%
+	% Die neuste Version von scrlettr2 verwenden 
+	version=last,
+]{scrlttr2}
+
+% Zeichenkodierung des Dokuments ist in UTF-8
+\usepackage[utf8]{inputenc}
+
+% Sprache des Dokuments auf Deutsch
+\usepackage[ngerman]{babel}
+
+% Includen von PDFs nach dem Brief, siehe \includepdf unten
+\usepackage{pdfpages}
+
+% klickbare Links und E-Mail-Adressen. Paket url kann keine klickbaren,
+% deswegen hyperref. Option hidelinks versteckt farbigen Rahmen.
+\usepackage[hidelinks]{hyperref}
+
+
+\usepackage[left=2.25cm,right=2.25cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+% Abstand zwischen Schlussgruß und Name vergrößern (alle drei Zeilen auskommentieren)
+%\makeatletter
+%\@setplength{sigbeforevskip}{3em}
+%\makeatother
+
+% Name nach Schlussgruß (unter Unterschrift) nicht nach rechts einrücken
+\renewcommand*{\raggedsignature}{\raggedright}
+
+
+
+% Absendername
+\setkomavar{fromname}{Paul Goldschmidt}
+
+% Absenderadresse
+\setkomavar{fromaddress}{69123 Heidelberg}
+
+% Absenderfax
+% (oben fromfax=true setzen)
+%\setkomavar{fromfax}{+49 222 222 22}
+
+% Absender-E-Mail-Adresse
+% der erste Paremeter ist fürs Klicken, der zweite wird angezeigt/gedruckt
+\setkomavar{fromemail}{\href{mailto:kontakt@paul-goldschmidt.de}{kontakt@paul-goldschmidt.de}}
+
+\setkomavar{firstfoot}{\center{Seite 1}}
+
+% Ort beim Datum
+\setkomavar{place}{Heidelberg}
+
+% Datum
+\setkomavar{date}{\today}
+
+% Betreff
+\setkomavar{subject}{Offener Brief an Frau Dr. Susanne Eisenmann: Ein Appell von Schüler*innen und Lehrer*innen an Ihre Verantwortung und die Ihres Ministeriums}
+
+
+\begin{letter}{
+	Ministerium für Kultus, Jugend und Sport\\
+	z. Hd. Dr. Susanne Eisenmann\\
+	Thouretstraße 6\\
+	70173 Stuttgart 
+}
+	
+\opening{Sehr geehrte Frau Dr. Eisenmann,}
+
+Mein Name ist Paul Goldschmidt und ich bin 18 Jahre alt. Ich bin stellvertretender Schülersprecher der Carl-Bosch-Schule Heidelberg sowie Mitglied des achten Jugendgemeinderates der Stadt Heidelberg. Ich schreibe diesen Brief nach zahllosen gebunden, da sie sich an die Vorgaben Ihres Ministeriums halten müssen.\\
+In diesen beispiellosen Zeiten, die uns vor enorme Herausforderungen stellen, ist es wichtiger denn je, sich klar zum Gesundheitsschutz der Bürgerinnen und Bürger, insbesondere jedoch der Risikogruppen zu bekennen. Doch was wir, die Schülerinnen und Schüler, Lehrerinnen und Lehrer des Bundeslandes Baden-Württemberg Tag für Tag erleben, ist weit von dieser fundamentalen Fürsorgepflicht für alle Bevölkerungsgruppen entfernt: Mit steigenden Infektionszahlen wird die Idee, Schulen mit vollen Klassenzimmern auf Biegen und Brechen weiter zu führen, mit jedem Tag realitätsferner und aus unserer Sicht gänzlich untragbar. \\
+Die Versuche, durch eine dauerhafte Maskenpflicht im Unterricht und auf dem Schulgelände sowie durch regelmäßiges Lüften der Übertragung des Virus Herr zu werden, sind ein Wunschdenken. Die Maskenpflicht endet im Sportunterricht, einem Ort, wo aufgrund von gesteigerter körperlicher Aktivität die Aerosolbelastung umso höher ist. Wenn die Masken getragen werden, sind Konzentrationsprobleme der Schüler*innen sehr häufig, da durch die Masken das laute Sprechen erschwert wird, Schüler*innen und Lehrer*innen nur schwer verstanden werden können. Zumal ist mit dem ständigen Tragen der Masken (bis zu zehn Stunden pro Tag) eine hohe körperliche Anstrengung verbunden, viele Schüler*innen sowie Lehrkräfte haben so am Ende des Schultages Gesundheitsbeschwerden. Und das regelmäßige Lüften wird im Winter kaum komplett durchsetzbar sein, denn ein Durchlüften im Klassenraum würde im Winter wohl arktische Temperaturen im Klassenraum mit sich bringen. Wie die Satirezeitung \glqq Der Postillon\grqq{} Mitte Oktober schon mahnte, müssen wohl bei diesen Temperaturen im Klassenzimmer Heizpilze verteilt werden\footnote{Der Postillon, 12.10.2020: \glqq \href{https://www.der-postillon.com/2020/10/heizpilze.html}{\color{blue}Heizpilze in Klassenzimmern sollen Lüften im Winter ermöglichen\grqq}}. Diese Temperaturen werden dem Immunsystem zusätzlich zusetzen, so könnte sich ein Virus wie COVID-19 umso schneller ausbreiten. \\
+
+\textbf{Deshalb appellieren wir an Sie:} Denken Sie über dringend benötigte Alternativsysteme zum Unterricht in voller Stärke mit allen Klassen im Präsenz"-unterricht gleichzeitig nach. Vor allem in weiterführenden Schulen und ab der Mittelstufe aufwärts gibt es andere Möglichkeiten, den Unterricht mit dem nötigen Abstand zu gewährleisten, und dabei gleichzeitig für mehr Chancengleichheit zu sorgen: Ein rollierendes System oder Klassenteilung würden für größeren Abstand zwischen den Schülern sorgen, so wäre eine Ansteckungsgefahr für Schüler*innen und Lehrer*innen niedriger, Risikogruppen könnten folglich noch eher den Unterricht besuchen. \\
+Natürlich können wir verstehen, dass gerade bei jüngeren Schülern ein dauerhafter Präsenz\-unterricht für die arbeitenden Eltern sehr wichtig und wünschenswert ist. Eine Alternative zum dauerhaften Präsenz\-unterricht in den Schulen wie das eben schon erwähnte rollierende System sind deshalb auch vor allem für die Klassenstufen sieben und aufwärts in vollem Maße umzusetzen, niedrigere Klassenstufen haben aber auch ein vermindertes Infektionsrisiko\footnote{Quelle: Vorveröffentlichung der Studie \href{https://www.klinikum.uni-heidelberg.de/fileadmin/pressestelle/Kinderstudie/Prevalence_of_COVID-19_in_BaWu__.pdf}{\color{blue}\glqq Prevalence of COVID-19 in children in Baden-Württemberg\grqq{}}} und sind deshalb nicht in dem selben Maß gefährdet wie es die Mittel- und Oberstufen in den Schulen unseres (Bundes-)Landes sind.
+
+Folgen Sie den Empfehlungen des Robert-Koch-Instituts\footnote{Siehe Tabelle 1 \glqq Orientierende Schwellenwerte/Indikatoren für infektionspräventive Maßnahmen in Schulen in Deutschland\grqq{} der \href{https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Praevention-Schulen.pdf}{\color{blue}Empfehlungen des Robert Koch-Instituts für Schulen}} und lernen Sie aus den Erfahrungen, die die Zeit zwischen Pfingsten und Sommer uns gebracht hat: Andere Systeme als der dauerhafte Präsenzunterricht sind durchführbar und verhindern, dass eine gesamte Schule auf einen Schlag zu einem Infektionsherd wird. Nehmen Sie bitte unter allem Umständen bei Ihren nächsten Schritten für ein verantwortungsvolleres Präsenzunterrichtssystem außerdem Rücksicht auf die Lehrerinnen und Lehrer, die Vielerorts in den letzten Monaten noch mehr Aufgaben als sonst übernehmen mussten (beispielsweise noch Schüler aus Risikogruppen im Homeschooling mit dem Unterrichtsstoff versorgen) und dafür auch häufig Freizeit geopfert haben, was mittel- und langfristig nicht tragbar ist.\\
+Frau Eisenmann, ich und viele andere in meinem Alter, sowie Lehrkräfte unseres Bundeslandes sind stark besorgt um die aktuelle Lage in den Schulen und daher fordern wir Sie dringend zu einem Umdenken in Ihrem Ministerium über die Handhabung der Corona-Situation an den Schulen auf.	 Denn Gesundheit und ein hoher Bildungsanspruch sind auch in diesen Tagen vereinbar, wenn man mit Voraussicht plant und mit Augenmaß und Verantwortung handelt. 
+
+\closing{Mit freundlichen Grüßen,}
+Im Namen der Unterzeichner*innen dieses Briefs, eine vollständige Liste dieser finden Sie in der beigefügten Anlange.
+
+% Verteiler
+%\cc{Bürgermeister, Vereinsvorsitzender}
+
+\end{letter}
+
+\end{document}
